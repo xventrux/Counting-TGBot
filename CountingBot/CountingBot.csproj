@@ -12,4 +12,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CountingBot.Infrastructure\CountingBot.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
