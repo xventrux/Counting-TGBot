@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountingBot.Domain", "Count
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountingBot.Infrastructure", "CountingBot.Infrastructure\CountingBot.Infrastructure.csproj", "{8BD209DB-F425-4DFF-8E54-D3AD11DB6038}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountingBot.DataAccess", "CountingBot.DataAccess\CountingBot.DataAccess.csproj", "{FC52FDF0-2DA4-4375-925E-D6E9BC1D6D44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8BD209DB-F425-4DFF-8E54-D3AD11DB6038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BD209DB-F425-4DFF-8E54-D3AD11DB6038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BD209DB-F425-4DFF-8E54-D3AD11DB6038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC52FDF0-2DA4-4375-925E-D6E9BC1D6D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC52FDF0-2DA4-4375-925E-D6E9BC1D6D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC52FDF0-2DA4-4375-925E-D6E9BC1D6D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC52FDF0-2DA4-4375-925E-D6E9BC1D6D44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
