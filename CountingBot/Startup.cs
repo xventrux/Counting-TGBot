@@ -1,5 +1,6 @@
 using CountingBot.AppServices.Services.CommandService;
 using CountingBot.AppServices.Services.UpdateService;
+using CountingBot.AppServices.Services.UserService;
 using CountingBot.Infrastructure.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +35,7 @@ namespace CountingBot
             //Регистрация сервисов
             services.AddScoped<ICommandService, CommandService>();
             services.AddScoped<IUpdateService, UpdateService>();
+            services.AddScoped<IUserService, UserService>();
 
             services.AddControllers();
         }
