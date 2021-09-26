@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CountingBot.AppServices\CountingBot.AppServices.csproj" />
     <ProjectReference Include="..\CountingBot.Infrastructure\CountingBot.Infrastructure.csproj" />
   </ItemGroup>
