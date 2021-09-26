@@ -18,7 +18,7 @@ namespace CountingBot.AppServices.Services.UpdateService
                 {
                     Id = update.Message.From.Id,
                     Login = update.Message.From.Username,
-                    Text = update.Message.Text
+                    Text = update.Message.Text.ToLower()
                 };
                 return tm;
             }
@@ -28,7 +28,7 @@ namespace CountingBot.AppServices.Services.UpdateService
                 {
                     Id = update.CallbackQuery.From.Id,
                     Login = update.CallbackQuery.From.Username,
-                    Text = update.CallbackQuery.Data,
+                    Text = update.CallbackQuery.Data.ToLower(),
                 };
                 return tcm;
             }
