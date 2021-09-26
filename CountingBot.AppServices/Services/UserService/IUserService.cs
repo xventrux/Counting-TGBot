@@ -17,7 +17,7 @@ namespace CountingBot.AppServices.Services.UserService
         /// </summary>
         /// <param name="id">Идентификатор пользователя</param>
         /// <returns></returns>
-        public Task<User> Login(long id, string login);
+        public Task<User> Login(long id);
 
         /// <summary>
         /// Регистрирует пользователя

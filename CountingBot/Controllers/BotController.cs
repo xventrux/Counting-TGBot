@@ -60,7 +60,7 @@ namespace CountingBot.Controllers
 
             if (message == null) return Ok();
 
-            Domain.Entities.User user = await userService.Login(message.Id, message.Login);
+            Domain.Entities.User user = await userService.Login(message.Id);
 
             if(user == null)
             {

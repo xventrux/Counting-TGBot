@@ -19,9 +19,11 @@ namespace CountingBot.AppServices.Services.UserService
         }
 
         /// <inheritdoc/>
-        public async Task<User> Login(long id, string login)
+        public async Task<User> Login(long id)
         {
             User user = await userRepository.GetByIdAsync(id);
+
+            if (user == null) return null;
 
             return user;
         }
