@@ -10,6 +10,7 @@
 *.userosscache
 *.sln.docstates
 /CountingBot/appsettings.json
+/CountingBot.Migrations/appsettings.json
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
