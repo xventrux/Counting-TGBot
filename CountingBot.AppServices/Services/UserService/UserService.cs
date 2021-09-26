@@ -23,8 +23,6 @@ namespace CountingBot.AppServices.Services.UserService
         {
             User user = await userRepository.GetByIdAsync(id);
 
-            if (user == null) user = await Registration(id, login);
-
             return user;
         }
 

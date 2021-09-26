@@ -1,4 +1,5 @@
 ﻿using CountingBot.AppServices.Services.CommandService;
+using CountingBot.AppServices.Services.ProcessService;
 using CountingBot.AppServices.Services.UpdateService;
 using CountingBot.AppServices.Services.UserService;
 using CountingBot.Telegram;
@@ -26,13 +27,15 @@ namespace CountingBot.Controllers
         private readonly IUpdateService updateService;
         private readonly IUserService userService;
 
-        public BotController(ITelegramBotClient telegramBotClient, 
-            ICommandService commandService, 
-            IUpdateService updateService)
+        public BotController(ITelegramBotClient telegramBotClient,
+            ICommandService commandService,
+            IUpdateService updateService, 
+            IProcessService processService)
         {
             this.telegramBotClient = telegramBotClient;
             this.commandService = commandService;
             this.updateService = updateService;
+            this.processService = processService;
         }
 
         [HttpGet]
@@ -49,6 +52,7 @@ namespace CountingBot.Controllers
             {
                 new BotCommand() { Command = "/start", Description = "Показать список команд" }
             });
+
             //Если обновление пустое, то ничего не делаем
             if (update == null) return Ok();
 
@@ -58,12 +62,18 @@ namespace CountingBot.Controllers
 
             Domain.Entities.User user = await userService.Login(message.Id, message.Login);
 
+            if(user == null)
+            {
+                user = await userService.Registration(message.Id, message.Login);
+                await telegramBotClient.SendTextMessageAsync(user.Id, "Добро пожаловать. Я буду тренировать тебя быстро выполнять различные арифметические команды");
+            }
+
             //Если у него есть какой-либо процесс, то запускаем его и больше ничего не делаем
             if (!String.IsNullOrEmpty(user.ProcessName))
             {
                 foreach (var process in processService.GetProcesses())
                 {
-                    if (process.Contains(user.UserProcessInformation.Name))
+                    if (process.Contains(user.ProcessName))
                     {
                         user = await process.Execute(user, message, telegramBotClient);
                         await userService.Update(user);
