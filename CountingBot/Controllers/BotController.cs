@@ -29,13 +29,15 @@ namespace CountingBot.Controllers
 
         public BotController(ITelegramBotClient telegramBotClient,
             ICommandService commandService,
-            IUpdateService updateService, 
-            IProcessService processService)
+            IUpdateService updateService,
+            IProcessService processService, 
+            IUserService userService)
         {
             this.telegramBotClient = telegramBotClient;
             this.commandService = commandService;
             this.updateService = updateService;
             this.processService = processService;
+            this.userService = userService;
         }
 
         [HttpGet]

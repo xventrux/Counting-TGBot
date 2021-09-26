@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Telegram.Bot;
 
 namespace CountingBot.AppServices.Services.UserService
 {
@@ -12,17 +13,18 @@ namespace CountingBot.AppServices.Services.UserService
     public class UserService : IUserService
     {
         IRepository<User> userRepository;
+        ITelegramBotClient telegramBotClient;
 
-        public UserService(IRepository<User> userRepository)
+        public UserService(IRepository<User> userRepository, ITelegramBotClient telegramBotClient)
         {
             this.userRepository = userRepository;
+            this.telegramBotClient = telegramBotClient;
         }
 
         /// <inheritdoc/>
         public async Task<User> Login(long id)
         {
             User user = await userRepository.GetByIdAsync(id);
-
             if (user == null) return null;
 
             return user;
