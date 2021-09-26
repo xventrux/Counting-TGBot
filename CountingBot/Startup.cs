@@ -1,4 +1,5 @@
 using CountingBot.AppServices.Services.CommandService;
+using CountingBot.AppServices.Services.ProcessService;
 using CountingBot.AppServices.Services.UpdateService;
 using CountingBot.AppServices.Services.UserService;
 using CountingBot.Infrastructure.Repository;
@@ -36,6 +37,7 @@ namespace CountingBot
             services.AddScoped<ICommandService, CommandService>();
             services.AddScoped<IUpdateService, UpdateService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IProcessService, ProcessService>();
 
             services.AddControllers();
         }
