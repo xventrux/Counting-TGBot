@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CountingBot.Contracts\CountingBot.Contracts.csproj" />
+    <ProjectReference Include="..\CountingBot.Infrastructure\CountingBot.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
