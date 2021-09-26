@@ -1,4 +1,5 @@
 ﻿using CountingBot.Domain.Entities;
+using CountingBot.Telegram;
 using System;
 using System.Collections.Generic;
 using System.Linq;

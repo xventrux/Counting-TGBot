@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CountingBot.Domain\CountingBot.Domain.csproj" />
+    <ProjectReference Include="..\CountingBot.Telegram\CountingBot.Telegram.csproj" />
   </ItemGroup>
 
 </Project>
