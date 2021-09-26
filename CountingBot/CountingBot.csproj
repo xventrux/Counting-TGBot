@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\CountingBot.AppServices\CountingBot.AppServices.csproj" />
+    <ProjectReference Include="..\CountingBot.DataAccess\CountingBot.DataAccess.csproj" />
+    <ProjectReference Include="..\CountingBot.Infrastructure\CountingBot.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
