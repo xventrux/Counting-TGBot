@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CountingBot.AppServices.Services.CommandService
 {
     /// <summary>
-    /// Сервис для работы с коммандами
+    /// Сервис для работы с командами
     /// </summary>
     public interface ICommandService
     {
