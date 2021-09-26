@@ -1,4 +1,5 @@
 ﻿using CountingBot.AppServices.Services.CommandService;
+using CountingBot.AppServices.Services.UpdateService;
 using CountingBot.Telegram;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,11 +21,15 @@ namespace CountingBot.Controllers
     {
         private readonly ITelegramBotClient telegramBotClient;
         private readonly ICommandService commandService;
+        private readonly IUpdateService updateService;
 
-        public BotController(ITelegramBotClient telegramBotClient, ICommandService commandService)
+        public BotController(ITelegramBotClient telegramBotClient, 
+            ICommandService commandService, 
+            IUpdateService updateService)
         {
             this.telegramBotClient = telegramBotClient;
             this.commandService = commandService;
+            this.updateService = updateService;
         }
 
         [HttpGet]
