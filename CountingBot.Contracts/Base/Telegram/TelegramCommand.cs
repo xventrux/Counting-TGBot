@@ -18,6 +18,10 @@ namespace CountingBot.Contracts.Base
         /// Наименование команды
         /// </summary>
         public abstract string Name { get; }
+        /// <summary>
+        /// Описание команды
+        /// </summary>
+        public abstract string Description { get; }
 
         /// <summary>
         /// Абстрактный метод, который выполняет команду

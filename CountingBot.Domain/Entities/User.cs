@@ -48,6 +48,12 @@ namespace CountingBot.Domain.Entities
         /// Шаг процесса пользователя
         /// </summary>
         public int Step { get; set; }
+
+        public void ClearProcess()
+        {
+            ProcessName = "";
+            Step = 0;
+        }
         #endregion
     }
 }

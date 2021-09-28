@@ -1,4 +1,5 @@
 ﻿using CountingBot.Contracts.Base;
+using CountingBot.Contracts.Processes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace CountingBot.AppServices.Services.ProcessService
             processes = new List<TelegramProcess>()
             {
                 //Сюда нужно добавить существующие команды
+                new ProcessL1()
             };
         }
 

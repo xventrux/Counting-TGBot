@@ -1,4 +1,5 @@
 ﻿using CountingBot.Contracts.Base;
+using CountingBot.Contracts.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace CountingBot.AppServices.Services.CommandService
             commands = new List<TelegramCommand>()
             {
                 //Сюда нужно добавить существующие команды
+                new CommandLevel1()
             };
         }
 
